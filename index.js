@@ -27,7 +27,7 @@ app.get("/", function (req, res) {
 
 
 // your first API endpoint... 
-app.get("/api/:date", function (req, res) {
+app.get("/api/:date?", function (req, res) {
   var date = req.params.date;
     let date1 = new Date(date);
     let date2 = new Date(parseInt(date));
