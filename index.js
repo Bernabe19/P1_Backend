@@ -31,11 +31,9 @@ app.get("/api/:date", function (req, res) {
   var date = req.params.date;
     let date1 = new Date(date);
     let date2 = new Date(parseInt(date));
-    let date3Comp = new Date(date.toString());
-    console.log(date1);
     if(date1 != "Invalid Date"){
       res.json({"unix": date1.getTime(), "utc": date1});
-    }else if(date1 == "Invalid Date" && date2 != "Invalid Date" && date3Comp != "Invalid Date"){
+    }else if(date1 == "Invalid Date" && date2 != "Invalid Date"){
       res.json({"unix": date2.getTime(), "utc": date2});
     }else{
       res.json({"error":"Invalid Date"});
