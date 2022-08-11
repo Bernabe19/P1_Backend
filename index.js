@@ -36,6 +36,8 @@ app.get("/api/:date", function (req, res) {
       res.json({"unix": date1.getTime(), "utc": date1.toUTCString()});
     }else if(date1 == "Invalid Date" && date2 != "Invalid Date"){
       res.json({"unix": date2.getTime(), "utc": date2.toUTCString()});
+    }else if(date = ""){
+      res.json({"unix": new Date().getTime(), "utc": new Date().toUTCString()});
     }else{
       res.json({"error":"Invalid Date"});
     }
